@@ -1,0 +1,93 @@
+{
+  "Default":
+  [
+    "Family Ranking"
+  ],
+  "Family Ranking": {
+    "name": "Family Ranking",
+    "action_type": "",
+    "table_data": [
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+    ]
+  },
+  "Parents": {
+    "name": "Parents",
+    "action_type": "",
+    "table_data": [
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+    ]
+  },
+  "Something Happened To Your Parents": {
+    "name": "Something Happened To Your Parents",
+    "action_type": "",
+    "table_data": [
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+    ]
+  },
+  "Family Status": {
+    "name": "Family Status",
+    "action_type": "",
+    "table_data": [
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+    ]
+  },
+  "Childhood Environment": {
+    "name": "Childhood Environment",
+    "action_type": "",
+    "table_data": [
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+    ]
+  },
+  "Family Tragedy": {
+    "name": "Family Tragedy",
+    "action_type": "",
+    "table_data": [
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+      {"value": "", "redirect": ""},
+    ]
+  },
+  "Siblings": {
+    "name": "Siblings",
+    "action_type": "",
+    "table_data": [
+      {"value": "", "redirect": ""},
+    ]
+  },
+}

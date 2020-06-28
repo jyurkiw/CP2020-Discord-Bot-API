@@ -1,0 +1,168 @@
+{
+  "Default":
+    [
+      "Clothes",
+      "Hairstyle",
+      "Affectations",
+      "Ethnic Origins"
+    ],
+  "Clothes": {
+    "name": "Clothes",
+    "table_data": [
+      "Biker Leathers",
+      "Blue Jeans",
+      "Corporate Suits",
+      "Jumpsuits",
+      "Miniskirts",
+      "High Fashion",
+      "Cammos",
+      "Normal Clothes",
+      "Nude",
+      "Bag Lady Chic"
+    ]
+  },
+  "Hairstyle": {
+    "name": "Hairstyle",
+    "table_data": [
+      "Mohawk",
+      "Long & Ratty",
+      "Short & Spiked",
+      "Wild & All Over",
+      "Bald",
+      "Striped",
+      "Tinted",
+      "Neat, Short",
+      "Short, Curly",
+      "Long, Straight"
+    ]
+  },
+  "Affectations": {
+    "name": "Affectations",
+    "table_data": [
+      "Tatoos",
+      "Mirrorshades",
+      "Ritual Scars",
+      "Spiked Gloves",
+      "Nose Rings",
+      "Earrings",
+      "Long Fingernails",
+      "Spiked Heeled Boots",
+      "Weird Contact Lenses",
+      "Fingerless Gloves"
+    ]
+  },
+  "Ethnic Origins": {
+    "name": "Ethnic Origins",
+    "table_data": [
+      {"value": "Anglo-American", "redirect": "Anglo-American"},
+      {"value": "African", "redirect": "African"},
+      {"value": "Japanese", "redirect": "Japanese/Korean"},
+      {"value": "Korean", "redirect": "Japanese/Korean"},
+      {"value": "Central European", "redirect": "Central European/Soviet"},
+      {"value": "Pacific Islander", "redirect": "Pacific Islander"},
+      {"value": "Soviet", "redirect": "Central European/Soviet"},
+      {"value": "Chinese", "redirect": "Chinese/Southeast Asian"},
+      {"value": "Southease Asian", "redirect": "Chinese/Southeast Asian"},
+      {"value": "Black American", "redirect": "Black American"},
+      {"value": "Hispanic American", "redirect": "Hispanic American"},
+      {"value": "Central American", "redirect": "Central/South American"},
+      {"value": "South American", "redirect": "Central/South American"},
+      {"value": "European", "redirect": "European"}
+    ]
+  },
+  "Anglo-American": {
+    "name": "Primary Language",
+    "table_data": [
+      "English"
+    ]
+  },
+  "African": {
+    "name": "Primary Language",
+    "table_data": [
+      "Bantu",
+      "Fante",
+      "Kongo",
+      "Ashanti",
+      "Zulu",
+      "Swahili"
+    ]
+  },
+  "Japanese/Korean": {
+    "name": "Primary Language",
+    "table_data": [
+      "Japanese",
+      "Korean"
+    ]
+  },
+  "Central European/Soviet": {
+    "name": "Primary Language",
+    "table_data": [
+      "Bulgarian",
+      "Russian",
+      "Czech",
+      "Polish",
+      "Ukranian",
+      "Slovak"
+    ]
+  },
+  "Pacific Islander": {
+    "name": "Primary Language",
+    "table_data": [
+      "Micronesasian",
+      "Tagalog",
+      "Polynesian",
+      "Malayan",
+      "Sudanese",
+      "Indonesian",
+      "Hawaiian"
+    ]
+  },
+  "Chinese/Southeast Asian": {
+    "name": "Primary Language",
+    "table_data": [
+      "Burmese",
+      "Cantonese",
+      "Mandarin",
+      "Thai",
+      "Tibetan",
+      "Vietnamese"
+    ]
+  },
+  "Black American": {
+    "name": "Primary Language",
+    "table_data": [
+      "English",
+      "Blackfolk"
+    ]
+  },
+  "Hispanic American": {
+    "name": "Primary Language",
+    "table_data": [
+      "Spanish",
+      "English"
+    ]
+  },
+  "Central/South American": {
+    "name": "Primary Language",
+    "table_data": [
+      "Spanish",
+      "Portuguese"
+    ]
+  },
+  "European": {
+    "name": "Primary Language",
+    "table_data": [
+      "French",
+      "German",
+      "English",
+      "Spanish",
+      "Italian",
+      "Greek",
+      "Danish",
+      "Dutch",
+      "Norwegian",
+      "Swedish",
+      "Finnish"
+    ]
+  }
+}
