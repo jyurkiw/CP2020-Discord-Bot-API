@@ -8,6 +8,7 @@
     ],
   "Clothes": {
     "name": "Clothes",
+    "action_type": "simple",
     "table_data": [
       "Biker Leathers",
       "Blue Jeans",
@@ -23,6 +24,7 @@
   },
   "Hairstyle": {
     "name": "Hairstyle",
+    "action_type": "simple",
     "table_data": [
       "Mohawk",
       "Long & Ratty",
@@ -38,6 +40,7 @@
   },
   "Affectations": {
     "name": "Affectations",
+    "action_type": "simple",
     "table_data": [
       "Tatoos",
       "Mirrorshades",
@@ -53,6 +56,7 @@
   },
   "Ethnic Origins": {
     "name": "Ethnic Origins",
+    "action_type": "redirect-data",
     "table_data": [
       {"value": "Anglo-American", "redirect": "Anglo-American"},
       {"value": "African", "redirect": "African"},
@@ -72,12 +76,14 @@
   },
   "Anglo-American": {
     "name": "Primary Language",
+    "action_type": "simple",
     "table_data": [
       "English"
     ]
   },
   "African": {
     "name": "Primary Language",
+    "action_type": "simple",
     "table_data": [
       "Bantu",
       "Fante",
@@ -89,6 +95,7 @@
   },
   "Japanese/Korean": {
     "name": "Primary Language",
+    "action_type": "simple",
     "table_data": [
       "Japanese",
       "Korean"
@@ -96,6 +103,7 @@
   },
   "Central European/Soviet": {
     "name": "Primary Language",
+    "action_type": "simple",
     "table_data": [
       "Bulgarian",
       "Russian",
@@ -107,6 +115,7 @@
   },
   "Pacific Islander": {
     "name": "Primary Language",
+    "action_type": "simple",
     "table_data": [
       "Micronesasian",
       "Tagalog",
@@ -119,6 +128,7 @@
   },
   "Chinese/Southeast Asian": {
     "name": "Primary Language",
+    "action_type": "simple",
     "table_data": [
       "Burmese",
       "Cantonese",
@@ -130,6 +140,7 @@
   },
   "Black American": {
     "name": "Primary Language",
+    "action_type": "simple",
     "table_data": [
       "English",
       "Blackfolk"
@@ -137,6 +148,7 @@
   },
   "Hispanic American": {
     "name": "Primary Language",
+    "action_type": "simple",
     "table_data": [
       "Spanish",
       "English"
@@ -144,6 +156,7 @@
   },
   "Central/South American": {
     "name": "Primary Language",
+    "action_type": "simple",
     "table_data": [
       "Spanish",
       "Portuguese"
@@ -151,6 +164,7 @@
   },
   "European": {
     "name": "Primary Language",
+    "action_type": "simple",
     "table_data": [
       "French",
       "German",
