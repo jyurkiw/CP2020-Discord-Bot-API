@@ -102,9 +102,14 @@
   },
   "Siblings": {
     "name": "Siblings",
-    "action_type": "",
+    "action_type": "execute_module",
+    "module_key": "Siblings"
     "table_data": [
-      {"value": "", "redirect": ""},
+      "Sibling dislikes you",
+      "Sibling likes you",
+      "Sibling neutral",
+      "They hero worship you",
+      "They hate you"
     ]
   },
 }
