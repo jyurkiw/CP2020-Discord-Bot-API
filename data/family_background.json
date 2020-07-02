@@ -6,7 +6,7 @@
   "Family Ranking": {
     "name": "Family Ranking",
     "action_type": "redirect-table",
-    "redirection": ["Parents"],
+    "redirect": ["Parents"],
     "table_data": [
       "Corporate Executive",
       "Corporate Manager",
@@ -17,7 +17,7 @@
       "Crime Lord",
       "Combat Zone Poor",
       "Urban Homeless",
-      "Arcology Family",
+      "Arcology Family"
     ]
   },
   "Parents": {
@@ -25,13 +25,13 @@
     "action_type": "redirect-data",
     "table_data": [
       {"value": "Both parents living", "redirect": "Family Status"},
-      {"value": "Something has happened to one or both parents parents", "redirect": "Something Happened To Your Parents"},
+      {"value": "Something has happened to one or both parents parents", "redirect": "Something Happened To Your Parents"}
     ]
   },
   "Something Happened To Your Parents": {
     "name": "Something Happened To Your Parents",
     "action_type": "redirect-table",
-    "redirection": ["Family Status"],
+    "redirect": ["Family Status"],
     "table_data": [
       "Your parent(s) died in warfare",
       "Your parent(s) died in an accident",
@@ -42,7 +42,7 @@
       "You were left with relatives for safe keeping",
       "You grew up on the street and never had parents",
       "Your parent(s) gave you up for adoption",
-      "You parent(s) sold you for money",
+      "You parent(s) sold you for money"
     ]
   },
   "Family Status": {
@@ -58,13 +58,13 @@
       {"value": "Family status is OK, even if parents are missing or dead", "redirect": "Childhood Environment"},
       {"value": "Family status is OK, even if parents are missing or dead", "redirect": "Childhood Environment"},
       {"value": "Family status is OK, even if parents are missing or dead", "redirect": "Childhood Environment"},
-      {"value": "Family status is OK, even if parents are missing or dead", "redirect": "Childhood Environment"},
+      {"value": "Family status is OK, even if parents are missing or dead", "redirect": "Childhood Environment"}
     ]
   },
   "Childhood Environment": {
     "name": "Childhood Environment",
     "action_type": "redirect-table",
-    "redirection": ["Siblings"],
+    "redirect": ["Siblings"],
     "table_data": [
       "Spent on the street with no adult supervision",
       "Spent in a safe Corporate Suburbia",
@@ -75,13 +75,13 @@
       "In a small village or town far from the City",
       "In a large acrology city",
       "In an aquatic Pirate Pack",
-      "On a Corporate controlled Farm or Research Facility",
+      "On a Corporate controlled Farm or Research Facility"
     ]
   },
   "Family Tragedy": {
     "name": "Family Tragedy",
     "action_type": "redirect-table",
-    "redirection": ["Childhoog Environment"],
+    "redirect": ["Childhood Environment"],
     "table_data": [
       "Family lost everything through betryal",
       "Family lost everything through bad management",
@@ -97,13 +97,33 @@
       "Family is involved in a longterm association such as a revolutionary group",
       "Your family was scattered to the winds due to misforune",
       "Your family is cursed with a hereditary feud that has lasted for generations",
-      "You are the inheritor of a family debt; you must honor this debt before moving on with your life",
+      "You are the inheritor of a family debt; you must honor this debt before moving on with your life"
     ]
   },
   "Siblings": {
     "name": "Siblings",
-    "action_type": "execute_module",
+    "action_type": "execute-module",
     "module_key": "Siblings"
+  },
+  "Sibling Age": {
+    "name": "Sibling Age",
+    "action_type": "simple",
+    "table_data": [
+      "older",
+      "older",
+      "older",
+      "older",
+      "older",
+      "younger",
+      "younger",
+      "younger",
+      "younger",
+      "twin"
+    ]
+  },
+  "Sibling Feelings": {
+    "name": "Sibling Feelings",
+    "action_type": "simple",
     "table_data": [
       "Sibling dislikes you",
       "Sibling likes you",
@@ -111,5 +131,5 @@
       "They hero worship you",
       "They hate you"
     ]
-  },
+  }
 }
