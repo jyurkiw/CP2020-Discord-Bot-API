@@ -1,5 +1,5 @@
-from random import randint, choice, choices
-from ..lib.table_result import TableResult
+from random import randint, choice
+from ..util import TableResult
 
 SIBLING_AGE_KEY = "Sibling Age"
 SIBLING_FEELINGS_KEY = "Sibling Feelings"
@@ -13,8 +13,8 @@ class SiblingsModule(object):
         numSiblings = self.numSiblings()
         if numSiblings:
             return TableResult(
-                name="Siblings",
-                value=[
+                "Siblings",
+                [
                     "{0}, {1}, {2}".format(
                         self.rollSex(),
                         self.rollRelativeAge(),

@@ -24,8 +24,8 @@
     "name": "Parents",
     "action_type": "redirect-data",
     "table_data": [
-      {"value": "Both parents living", "redirect": "Family Status"},
-      {"value": "Something has happened to one or both parents parents", "redirect": "Something Happened To Your Parents"}
+      {"value": "Both parents living", "redirect": ["Family Status"]},
+      {"value": "Something has happened to one or both parents parents", "redirect": ["Something Happened To Your Parents"]}
     ]
   },
   "Something Happened To Your Parents": {
@@ -49,16 +49,16 @@
     "name": "Family Status",
     "action_type": "redirect-data",
     "table_data": [
-      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": "Family Tragedy"},
-      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": "Family Tragedy"},
-      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": "Family Tragedy"},
-      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": "Family Tragedy"},
-      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": "Family Tragedy"},
-      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": "Family Tragedy"},
-      {"value": "Family status is OK, even if parents are missing or dead", "redirect": "Childhood Environment"},
-      {"value": "Family status is OK, even if parents are missing or dead", "redirect": "Childhood Environment"},
-      {"value": "Family status is OK, even if parents are missing or dead", "redirect": "Childhood Environment"},
-      {"value": "Family status is OK, even if parents are missing or dead", "redirect": "Childhood Environment"}
+      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": ["Family Tragedy"]},
+      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": ["Family Tragedy"]},
+      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": ["Family Tragedy"]},
+      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": ["Family Tragedy"]},
+      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": ["Family Tragedy"]},
+      {"value": "Family status in danger, and you risk losing everything (if you haven't already)", "redirect": ["Family Tragedy"]},
+      {"value": "Family status is OK, even if parents are missing or dead", "redirect": ["Childhood Environment"]},
+      {"value": "Family status is OK, even if parents are missing or dead", "redirect": ["Childhood Environment"]},
+      {"value": "Family status is OK, even if parents are missing or dead", "redirect": ["Childhood Environment"]},
+      {"value": "Family status is OK, even if parents are missing or dead", "redirect": ["Childhood Environment"]}
     ]
   },
   "Childhood Environment": {
