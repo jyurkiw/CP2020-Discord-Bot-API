@@ -20,7 +20,6 @@ class CPDataHandler(object):
 
         while actionList:
             action = actionList.popleft()
-            print(action)
             result = self.rollOnTable(action)
 
             if not result.isTableResult():
