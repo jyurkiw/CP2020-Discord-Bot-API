@@ -1,5 +1,5 @@
 from random import randint, choice
-from .stat import get_min_stats
+from .stat import get_min_stats, StatsTuple
 
 MIN_STAT = "minStat"
 MAX_STAT = "maxStat"
@@ -55,6 +55,18 @@ class StatBlock(object):
         Return a simple list of all stat values.
         """
         return [stat.value for stat in self.stats]
+
+    def toDict(self):
+        """
+        Return a simple dict of all stat values keyed to stat names.
+        """
+        return {s.name.lower(): s.value for s in self.stats}
+
+    def toStatsTuple(self):
+        """
+        Populate a StatsTuple with this StatBlock.
+        """
+        return StatsTuple(**self.toDict())
 
     def getStatTotal(self):
         """

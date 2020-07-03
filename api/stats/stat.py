@@ -1,4 +1,5 @@
 from random import randint
+from collections import namedtuple
 
 INT = "INT"
 REF = "REF"
@@ -12,6 +13,8 @@ EMP = "EMP"
 
 
 STATS = [INT, REF, TECH, COOL, ATTR, LUCK, MA, BODY, EMP]
+
+StatsTuple = namedtuple("StatsTuple", [s.lower() for s in STATS])
 
 
 def get_min_stats(minStat):
