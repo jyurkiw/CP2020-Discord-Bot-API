@@ -1,11 +1,7 @@
 import pytest
 from unittest import TestCase
 
-from collections import namedtuple as NamedTuple
-
 from ...stats.stat import Stat
-
-StatConfig = NamedTuple("StatConfig", ["minStat"])
 
 
 class TestStatGeneration(TestCase):
@@ -23,12 +19,12 @@ class TestStatGeneration(TestCase):
         ]
 
         self.testStatName = "TEST"
+        self.testStatMin = 3
         self.testStatMax = 5
-        self.testConfig = StatConfig(minStat=3)
-        self.testStat = Stat(self.testStatName, self.testConfig)
+        self.testStat = Stat(self.testStatName, self.testStatMin)
 
     def test_stat_minStatGetsSet(self):
-        self.assertEqual(self.testStat.value, self.testConfig.minStat)
+        self.assertEqual(self.testStat.value, self.testStatMin)
 
     def test_stat_statNameGetsSet(self):
         self.assertEqual(self.testStat.name, self.testStatName)

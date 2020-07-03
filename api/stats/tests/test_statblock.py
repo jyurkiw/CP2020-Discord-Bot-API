@@ -48,5 +48,6 @@ class TestGenerateRandom(TestCase):
         for statBlock_id in range(1, 1000):
             statBlock = StatBlock(minTotal=79)
             statBlock._generateRandom_setDefaultTotals()
+
             self.assertGreaterEqual(statBlock.totalStats, 79)
             self.assertLessEqual(statBlock.totalStats, 80)

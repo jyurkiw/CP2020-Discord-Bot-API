@@ -31,7 +31,7 @@ class StatBlock(object):
     def _generateRandom_setDefaultTotals(self):
         self.minTotal = self.minTotal if self.minTotal else 40
         self.maxTotal = self.maxTotal if self.maxTotal else 80
-        self.total = randint(self.minTotal, self.maxTotal)
+        self.totalStats = randint(self.minTotal, self.maxTotal)
 
     def _generateRandom_incrementalBuildByTotal(self):
         statLen = len(self.stats)
