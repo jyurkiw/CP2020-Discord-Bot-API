@@ -1,7 +1,5 @@
 from collections import namedtuple
-from random import choices
-
-import copy
+from random import choice
 
 ValueCount = namedtuple("ValueCount", ["value", "count"])
 
@@ -22,13 +20,17 @@ class WeightedValue(object):
         self.count = count
         self.weight = weight
 
-    def increment(self):
+    def increment(self, max):
         """Increment the count by 1.
+
+        Params:
+            max int The max count after increment.
+
+        Return:
+            True if the count can be incremented again.
         """
         self.count += 1
-
-    def __deepcopy__(self, memo=None):
-        return WeightedValue(self.value, self.count, self.weight)
+        return self.count < max
 
     def __str__(self):
         return "WeightedValue(value={0}, count={1}, weight={2})".format(
@@ -40,15 +42,17 @@ class ValueDistributor(object):
     """Distribute counts over a list of values.
     """
 
-    def __init__(self, minCountPer=1, values=[]):
+    def __init__(self, minCountPer=1, maxCountPer=10):
         """Set minimum count per, and values.
         Values arg is there to support deepcopy.
 
         Params:
             minCountPer int The count to start each value with [default 1]
+            maxCountPer int The max count per value [default 10]
         """
-        self.values = values
+        self.values = list()
         self.minCountPer = minCountPer
+        self.maxCountPer = 10
 
     def add(self, value, weight=1, minCount=None):
         """Add a value to the distributor.
@@ -72,43 +76,37 @@ class ValueDistributor(object):
         Params:
             numRolls int The number of increments to make.
             totalRolls int The target count total.
-
-        Return:
-            A list of ValueCount namedtuples (name=, value=)
         """
         totalRolls = args.get("totalRolls", None)
 
         if totalRolls:
             numRolls = totalRolls - self._totalCount()
 
-        for v in choices(self.values, self._getWeights(), k=numRolls):
-            v.increment()
+        workingSkillList = [v for v in self.values]
+        for i in range(0, numRolls):
+            if not workingSkillList:
+                return
+            skill = choice(workingSkillList)
+            if not skill.increment(self.maxCountPer):
+                workingSkillList.remove(skill)
 
-        return self._calculateReturnList()
-
-    def _getWeights(self):
-        return [v.weight for v in self.values]
-
-    def _totalCount(self):
-        return sum([v.count for v in self.values])
-
-    def _calculateReturnList(self):
+    def getSkillList(self):
+        """Returns a list of ValueCount namedtuples (value=, count=).
+        """
         return [
             ValueCount(value=v.value, count=v.count)
             for v in self.values
             if v.count > 0
         ]
 
-    def __deepcopy__(self, memo=None):
-        return ValueDistributor(
-            self.minCountPer, [copy.deepcopy(v) for v in self.values]
-        )
+    def getSkillNames(self):
+        return [s.value for s in self.values]
 
-    def clone(self):
-        """Returns a deepcopy of this object.
-        Useful for a factory pattern.
-        """
-        return copy.deepcopy(self)
+    def _getWeights(self):
+        return [v.weight for v in self.values]
+
+    def _totalCount(self):
+        return sum([v.count for v in self.values])
 
     def __str__(self):
         return "\n".join(
