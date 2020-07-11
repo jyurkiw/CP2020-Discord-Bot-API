@@ -90,7 +90,7 @@ class ValueDistributor(object):
             if not skill.increment(self.maxCountPer):
                 workingSkillList.remove(skill)
 
-    def getSkillList(self):
+    def getValueCounts(self):
         """Returns a list of ValueCount namedtuples (value=, count=).
         """
         return [

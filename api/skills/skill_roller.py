@@ -44,7 +44,7 @@ class SkillRoller(object):
         self._addPickupSkills(distributor, numPickupSkillPoints)
         distributor.roll(numPickupSkillPoints)
 
-        return distributor.getSkillList()
+        return distributor.getValueCounts()
 
     def getRandomRole(self):
         """Returns a random role.
