@@ -4,7 +4,7 @@ import pymongo
 
 class WeaponsHandler(MongoHandler):
     def __init__(self):
-        client = pymongo.MongoClient
+        client = pymongo.MongoClient()
         super().__init__(client, client.cyberpunk2020)
         self.weapons = self.database.weapons
 
