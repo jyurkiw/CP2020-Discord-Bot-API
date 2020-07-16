@@ -11,8 +11,8 @@ class MongoHandler(object):
         self.db = database
 
     def getNRandom(self, collection, filter, n):
-        return collection.aggregate(
-            [{"$match": filter}, {"$sample": {"size": n}}]
+        return list(
+            collection.aggregate([{"$match": filter}, {"$sample": {"size": n}}])
         )
 
     def getRandom(self, collection, filter):
