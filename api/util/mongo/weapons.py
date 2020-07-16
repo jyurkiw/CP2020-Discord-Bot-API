@@ -1,9 +1,11 @@
-from mongo_handler import MongoHandler
+from .mongo_handler import MongoHandler
+import pymongo
 
 
 class WeaponsHandler(MongoHandler):
-    def __init__(self, client, database):
-        super().__init__(client, database)
+    def __init__(self):
+        client = pymongo.MongoClient
+        super().__init__(client, client.cyberpunk2020)
         self.weapons = self.database.weapons
 
     def getRandomWeapon(self, category):
