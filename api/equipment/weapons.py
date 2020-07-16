@@ -10,3 +10,6 @@ class WeaponsHandler(MongoHandler):
 
     def getRandomWeapon(self, category):
         return self.getRandom(self.weapons, {"category": category})
+
+    def getWeaponCategories(self):
+        return self.db.weapons.distinct("category")
