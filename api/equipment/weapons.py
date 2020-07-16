@@ -1,4 +1,4 @@
-from .mongo_handler import MongoHandler
+from ..util.mongo.mongo_handler import MongoHandler
 import pymongo
 
 

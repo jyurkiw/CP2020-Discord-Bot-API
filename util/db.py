@@ -17,5 +17,8 @@ def insert_collection_doc_data(filepath, filename):
 
         # Murder any existing collection and rebuild it.
         # This function should preserve nothing, and replace everything.
-        db[collection_name].drop()
-        db[filename.replace(".json", "")].insert_many(data)
+        collection = db[collection_name]
+        collection.drop()
+        collection.insert_many(data)
+        collection.create_index("category")
+        collection.create_index("reliability")
