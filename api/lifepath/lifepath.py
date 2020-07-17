@@ -15,15 +15,19 @@ class LifepathRoller(MongoHandler):
         results = {"step": step, result["table_name"]: result}
 
         while result.get("redirect", False):
+            print("redirect", flush=True)
             redirect = choice(result["redirect"])
             if redirect["table_name"] in results:
+                print("redirect error", flush=True)
                 raise Exception(
                     "Circular lifepath redirection detected ({step}: {table_name}). Aborting...".format(
                         result
                     )
                 )
             result = self.rollTable(step, redirect)
+            print(result, flush=True)
             results[result["table_name"]] = result
+        return results
 
     def isModuleResult(self, result):
         return result.get("module_key", False)

@@ -20,4 +20,8 @@ class MongoHandler(object):
         )
 
     def getRandom(self, filter):
-        return self.getNRandom(filter, 1)[0]
+        r = self.getNRandom(filter, 1)
+        if r:
+            return r[0]
+        else:
+            return None
