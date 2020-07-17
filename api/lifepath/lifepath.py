@@ -19,7 +19,7 @@ class LifepathRoller(MongoHandler):
             if redirect in results:
                 raise Exception(
                     "Circular lifepath redirection detected ({step}: {table_name}). Aborting...".format(
-                        result
+                        **result
                     )
                 )
             result = self.rollTable(step, redirect)
