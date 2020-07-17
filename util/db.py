@@ -7,7 +7,7 @@ import pymongo
 import os
 
 
-def insert_collection_doc_data(filepath, filename):
+def insert_collection_doc_data(filepath, filename, indexes=[]):
     client = pymongo.MongoClient()
     db = client.cyberpunk2020
 
@@ -20,5 +20,7 @@ def insert_collection_doc_data(filepath, filename):
         collection = db[collection_name]
         collection.drop()
         collection.insert_many(data)
-        collection.create_index("category")
-        collection.create_index("reliability")
+
+        if indexes:
+            for index in indexes:
+                collection.create_index(index)
