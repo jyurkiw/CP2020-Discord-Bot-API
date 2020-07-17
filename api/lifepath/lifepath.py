@@ -17,7 +17,7 @@ class LifepathRoller(MongoHandler):
         while result.get("redirect", False):
             print("redirect", flush=True)
             redirect = choice(result["redirect"])
-            if redirect["table_name"] in results:
+            if redirect in results:
                 print("redirect error", flush=True)
                 raise Exception(
                     "Circular lifepath redirection detected ({step}: {table_name}). Aborting...".format(
