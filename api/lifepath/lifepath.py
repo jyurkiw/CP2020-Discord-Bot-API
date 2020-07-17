@@ -12,7 +12,7 @@ class LifepathRoller(MongoHandler):
 
     def rollTableChain(self, step, startTableName):
         result = self.rollTable(step, startTableName)
-        results = {"step": step, result["table_name"]: result}
+        results = {result["table_name"]: result}
 
         while result.get("redirect", False):
             print("redirect", flush=True)
