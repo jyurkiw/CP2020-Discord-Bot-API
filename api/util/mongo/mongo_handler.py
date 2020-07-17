@@ -20,4 +20,4 @@ class MongoHandler(object):
         )
 
     def getRandom(self, filter):
-        return self.getNRandom(self.collection, filter, 1)[0]
+        return self.getNRandom(filter, 1)[0]

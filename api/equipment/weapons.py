@@ -9,4 +9,4 @@ class WeaponsRoller(MongoHandler):
         return self.getRandom(self.collection, {"category": category})
 
     def getWeaponCategories(self):
-        return self.db.collection.distinct("category")
+        return self.collection.distinct("category")
