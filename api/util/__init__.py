@@ -4,10 +4,10 @@ from .redirect_action_result import (
     RedirectActionResult as _RedirectActionResult,
 )
 from .data_handler import CPDataHandler as _CPDataHandler
-from .value_distributor import ValueDistributor as _ValueDistributor
+from .value_distributor import distributeValues as _distributeValues
 
 CPDataHandler = _CPDataHandler
 JsonConstants = _JsonConstants
 TableResult = _TableResult
 RedirectActionResult = _RedirectActionResult
-ValueDistributor = _ValueDistributor
+distributeValues = _distributeValues

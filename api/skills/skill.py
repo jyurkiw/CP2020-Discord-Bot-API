@@ -1,4 +1,4 @@
-from ..util.value_distributor import distributeValues
+from ..util import distributeValues
 
 from collections import namedtuple
 from random import sample
