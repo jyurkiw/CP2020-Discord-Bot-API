@@ -22,11 +22,14 @@ class Skill(object):
         o.score += 1
 
     @staticmethod
-    def docToSkills(doc):
-        if doc.get(select, None) and isinstance(doc.get("skill"), list):
-            return [Skill(s, 1) for s in sample(doc.get("skill"))]
+    def docToSkills(doc, startingSkillLevel=1):
+        if doc.get("select", None) and isinstance(doc.get("skill"), list):
+            return [
+                Skill(s, startingSkillLevel)
+                for s in sample(doc.get("skill"), int(doc.get("select")))
+            ]
         else:
-            return [Skill(doc.get("skill"), 1)]
+            return [Skill(doc.get("skill"), startingSkillLevel)]
 
     @staticmethod
     def distributePoints(values, points=40):
@@ -35,5 +38,5 @@ class Skill(object):
             keyGetter=Skill.getKey,
             countGetter=Skill.getCount,
             incrementor=Skill.increment,
-            total=point,
+            total=points,
         )
