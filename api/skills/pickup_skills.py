@@ -11,8 +11,8 @@ class PickupSkillsRoller(MongoHandler):
         skSet = set([s.name for s in skills])
 
         for doc in self.collection.find():
-            if doc.get("skill") not in skSet:
-                skills += Skill.docToSkills(doc)
+            if doc.get("name") not in skSet:
+                skills += Skill.docToSkills(doc, 0)
 
         # Distribute skill points
         Skill.distributePoints(skills, points=points)
