@@ -15,7 +15,11 @@ class MongoHandler(object):
     def getNRandom(self, filter, n):
         return list(
             self.collection.aggregate(
-                [{"$match": filter}, {"$sample": {"size": n}}]
+                [
+                    {"$match": filter},
+                    {"$sample": {"size": n}},
+                    {"$project": {"_id": 0}},
+                ]
             )
         )
 
