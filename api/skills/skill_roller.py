@@ -1,6 +1,7 @@
-from random import choice, sample, randint
+from .career_skills import CareerSkillsRoller
+from .pickup_skills import PickupSkillsRoller
 
-from math import ceil
+from random import choice
 
 
 class SkillRoller(object):
@@ -16,15 +17,34 @@ class SkillRoller(object):
             careerSkills List Career skill lists grouped by roles.
             roles List A list of roles with career skill data.
         """
-        pass
+        self.csRoller = CareerSkillsRoller(dbName)
+        self.psRoller = PickupSkillsRoller(dbName)
 
-    def rollRandom(self, numPickupSkillPoints):
-        pass
+    def rollRandomRole(self, numPickupSkillPoints, points=40):
+        """Returns a random set of skills, pickup skills, and a random role.
 
-    def roll(self, role, numPickupSkillPoints):
-        pass
+        Params:
+            numPickupSkillPoints int The number of pickup skill points to distribute.
+            points int The number of career skill points to distribute (default=40)
+
+        Returns:
+            (role, [Skill1, Skill2, ..., SkillN])
+        """
+        role = self.getRandomRole()
+        return role, self.roll(role, numPickupSkillPoints)
+
+    def roll(self, role, numPickupSkillPoints, points=40):
+        """Returns a random set of skills and pickup skills for a role.
+
+        Params:
+            numPickupSkillPoints in The number of pickup skill points to distribute.
+            point int The number of career skill points to distribute (default=40)
+        """
+        return self.psRoller.addPickupSkills(
+            self.csRoller.getCareerSkills(role), numPickupSkillPoints
+        )
 
     def getRandomRole(self):
         """Returns a random role.
         """
-        pass
+        return choice(self.csRoller.getRoles())

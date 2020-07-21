@@ -38,5 +38,5 @@ class Skill(object):
             keyGetter=Skill.getKey,
             countGetter=Skill.getCount,
             incrementor=Skill.increment,
-            total=points,
+            points=points,
         )
