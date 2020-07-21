@@ -28,7 +28,7 @@ class LifepathRoller(MongoHandler):
         return self.getRandom({"step": step, "table_name": tableName})
 
     def _rollTableChain(self, step, startTableName):
-        result = self.rollTable(step, startTableName)
+        result = self._rollTable(step, startTableName)
         results = [result]
 
         while result.get("redirect", False):
@@ -39,7 +39,7 @@ class LifepathRoller(MongoHandler):
                         **result
                     )
                 )
-            result = self.rollTable(step, redirect)
+            result = self._rollTable(step, redirect)
             results.append(result)
         return results
 
