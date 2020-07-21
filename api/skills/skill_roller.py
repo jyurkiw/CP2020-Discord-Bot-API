@@ -1,12 +1,7 @@
-from ..util import ValueDistributor
-from random import choice, sample, randint
-from collections import namedtuple
+from .career_skills import CareerSkillsRoller
+from .pickup_skills import PickupSkillsRoller
 
-from math import ceil
-
-SkillEntry = namedtuple("SkillEntry", ["stat", "skill"])
-SelectEntry = namedtuple("CareerEntry", ["stat", "skill", "select"])
-RandomSkillsResult = namedtuple("RandomSkillsResult", ["role", "skills"])
+from random import choice
 
 
 class SkillRoller(object):
@@ -14,7 +9,7 @@ class SkillRoller(object):
     Generates roles, career skills, and distributes pickup skill points.
     """
 
-    def __init__(self, masterSkills, careerSkills, roles):
+    def __init__(self, dbName):
         """Setup the roller with master skills, career skills, and roles.
 
         Params:
@@ -22,62 +17,34 @@ class SkillRoller(object):
             careerSkills List Career skill lists grouped by roles.
             roles List A list of roles with career skill data.
         """
-        self.masterSkills = [SkillEntry(**skill) for skill in masterSkills]
-        self.careerSkills = {
-            role: [
-                SelectEntry(**s) if "select" in s else SkillEntry(**s)
-                for s in careerSkills[role]
-            ]
-            for role in careerSkills
-        }
-        self.roles = roles
+        self.csRoller = CareerSkillsRoller(dbName)
+        self.psRoller = PickupSkillsRoller(dbName)
 
-    def rollRandom(self, numPickupSkillPoints):
+    def rollRandomRole(self, numPickupSkillPoints, points=40):
+        """Returns a random set of skills, pickup skills, and a random role.
+
+        Params:
+            numPickupSkillPoints int The number of pickup skill points to distribute.
+            points int The number of career skill points to distribute (default=40)
+
+        Returns:
+            (role, [Skill1, Skill2, ..., SkillN])
+        """
         role = self.getRandomRole()
-        return RandomSkillsResult(
-            role=role, skills=self.roll(role, numPickupSkillPoints)
+        return role, self.roll(role, numPickupSkillPoints)
+
+    def roll(self, role, numPickupSkillPoints, points=40):
+        """Returns a random set of skills and pickup skills for a role.
+
+        Params:
+            numPickupSkillPoints in The number of pickup skill points to distribute.
+            point int The number of career skill points to distribute (default=40)
+        """
+        return self.psRoller.addPickupSkills(
+            self.csRoller.getCareerSkills(role), numPickupSkillPoints
         )
-
-    def roll(self, role, numPickupSkillPoints):
-        distributor = self._buildCareerSkillDistributor(role)
-        distributor.roll(totalRolls=40)
-        self._addPickupSkills(distributor, numPickupSkillPoints)
-        distributor.roll(numPickupSkillPoints)
-
-        return distributor.getValueCounts()
 
     def getRandomRole(self):
         """Returns a random role.
         """
-        return choice(self.roles)
-
-    def _getCareerSkillList(self, role):
-        skills = list()
-        for s in self.careerSkills[role]:
-            if isinstance(s, SkillEntry):
-                skills.append(s)
-            else:
-                skills += [
-                    SkillEntry(stat=s.stat, skill=skill)
-                    for skill in sample(s.skill, k=s.select)
-                ]
-        return skills
-
-    def _getPickupSkillList(self, numPickupSkillPoints):
-        numPickupSkills = randint(
-            ceil(numPickupSkillPoints / 10), numPickupSkillPoints
-        )
-        return sample(self.masterSkills, numPickupSkills)
-
-    def _buildCareerSkillDistributor(self, role):
-        distributor = ValueDistributor(minCountPer=1)
-        for skill in self._getCareerSkillList(role):
-            distributor.add(skill.skill, 1, 1)
-        return distributor
-
-    def _addPickupSkills(self, skillDistributor, pickupSkillPoints):
-        charSkillList = set(skillDistributor.getSkillNames())
-
-        for skill in self._getPickupSkillList(pickupSkillPoints):
-            if skill.skill not in charSkillList:
-                skillDistributor.add(skill.skill, 1, 0)
+        return choice(self.csRoller.getRoles())
