@@ -50,3 +50,6 @@ insert_collection_doc_data(
         "reliability",
     ],
 )
+insert_collection_doc_data(
+    dataPath, "armor.json", ["head", "torso", "arms", "legs"]
+)
