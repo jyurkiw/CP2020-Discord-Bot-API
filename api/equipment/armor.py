@@ -56,4 +56,4 @@ class ArmorRoller(MongoHandler):
     def getRandomArmor(self):
         """Returns a list of armor between 1 and 3 items long (random range).
         """
-        return getArmor(randint(1, 3))
+        return self.getArmor(randint(1, 3))
